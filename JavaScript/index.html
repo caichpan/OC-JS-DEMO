@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<div style="margin-top: 20px">
+<h2>JS与OC交互</h2>
+    <!--点击这里后就会调用oc的call方法-->
+<input type="button" value="唤起本地方法(call)" onclick="tianbai.call()">
+</div>
+<div>
+<input type="button" value="唤起getCall:(NSString *)callString传值" onclick="call()">
+</div>
+
+<script>
+
+//从oc的call方法吧知传回来这里
+    var Callback = function(str)
+    {
+
+        alert(str+'__111');
+    };
+
+var call = function()
+{
+alert(111);
+
+    var callInfo = JSON.stringify({"jianshu": "http://www.jianshu.com/users/55c8fdc3c6e7/latest_articles"});//点击第二个按钮后就把这个json传过去
+        tianbai.getCall(callInfo);
+};
+
+
+var alerCallback = function()
+{
+
+    alert('成功');
+};
+
+
+</script>
+</body>
+</html>
